@@ -1,0 +1,26 @@
+id: de.tum.in.isabelle.Isabelle-2023
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: isabelle_jedit
+finish-args:
+  # X11 access
+  - --socket=x11
+  - --share=ipc
+  - --filesystem=home
+modules:
+  - name: isabelle-bin
+    sources:
+      - type: archive
+        url: 'https://isabelle.in.tum.de/dist/Isabelle2023_linux.tar.gz'
+        sha256: 1a8e190ac0f3e6027bb961b954bacd24e75d30f5f5f06f7d14069da57e7746a8
+    buildsystem: simple
+    build-commands:
+      - cp -ar * /app
+  - name: desktop-misc
+    sources:
+      - type: file
+        path: isabelle_jedit
+    buildsystem: simple
+    build-commands:
+      - install -m555 isabelle_jedit /app/bin/
