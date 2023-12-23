@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Isabelle 2023
+Categories=Development;IDE
+Encoding=UTF-8
+Type=Application
+Exec=/app/Isabelle2023 %F
+TryExec=/app/Isabelle2023
+Icon=/app/lib/logo/isabelle_transparent.gif
+Terminal=false
+StartupNotify=true
+MimeType=text/thy
+
