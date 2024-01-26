@@ -23,7 +23,10 @@ modules:
         path: isabelle_jedit
       - type: file
         path: de.tum.in.isabelle.Isabelle-2023.desktop
+      - type: file
+        path: de.tum.in.isabelle.Isabelle-2023-VSC.desktop
     buildsystem: simple
     build-commands:
       - install -m555 isabelle_jedit /app/bin/
       - install -D --target-directory=/app/share/applications -m444 $FLATPAK_ID.desktop
+      - install -D --target-directory=/app/share/applications -m444 $FLATPAK_ID-VSC.desktop

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Isabelle/VSC 2023
+Categories=Development;IDE
+Encoding=UTF-8
+Type=Application
+Exec=/app/bin/isabelle vscode %F
+TryExec=/app/bin/isabelle vscode
+Icon=/app/lib/logo/isabelle_transparent.gif
+Terminal=false
+StartupNotify=true
+MimeType=text/thy
+
