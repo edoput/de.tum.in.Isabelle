@@ -2,7 +2,6 @@ id: de.tum.in.isabelle.Isabelle-2023
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
-command: isabelle_jedit
 finish-args:
   # Isabelle uses X11. Without IPC and SHM you will experience
   # sluggish rendering. Without DRI rendering will be done in
@@ -24,13 +23,10 @@ modules:
   - name: desktop-misc
     sources:
       - type: file
-        path: isabelle_jedit
-      - type: file
         path: de.tum.in.isabelle.Isabelle-2023.desktop
       - type: file
         path: de.tum.in.isabelle.Isabelle-2023-VSC.desktop
     buildsystem: simple
     build-commands:
-      - install -m555 isabelle_jedit /app/bin/
       - install -D --target-directory=/app/share/applications -m444 $FLATPAK_ID.desktop
       - install -D --target-directory=/app/share/applications -m444 $FLATPAK_ID-VSC.desktop
