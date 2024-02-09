@@ -1,5 +1,5 @@
 id: de.tum.in.isabelle.Isabelle-2023
-runtime: org.freedesktop.Platform
+runtime: org.freedesktop.Platform.GL.default
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 finish-args:
