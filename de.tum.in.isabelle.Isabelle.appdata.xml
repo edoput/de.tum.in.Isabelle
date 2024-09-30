@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>de.tum.in.isabelle.Isabelle</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>TODO</project_license>
+  <name>TODO</name>
+  <summary>TODO</summary>
+  <description>TODO</description>
+  <screenshots>
+  </screenshots>
+  <url type="homepage">https://isabelle.in.tum.de/</url>
+  <releases>
+    <release version="2024" date="2024-05-01"/>
+  </releases>
+</component>

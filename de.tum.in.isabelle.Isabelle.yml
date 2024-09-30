@@ -1,0 +1,32 @@
+id: de.tum.in.isabelle.Isabelle
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: /app/Isabelle2024
+finish-args:
+  # Isabelle uses X11. Without IPC and SHM you will experience
+  # sluggish rendering. Without DRI rendering will be done in
+  # software.
+  - --socket=x11
+  - --share=ipc
+  - --device=shm
+  - --device=dri
+  - --filesystem=home
+  - --persist=.isabelle
+modules:
+  - name: isabelle-bin
+    sources:
+      - type: archive
+        url: 'https://isabelle.in.tum.de/dist/Isabelle2024_linux.tar.gz'
+        archive-type: 'tar-gzip'
+        sha256: 603aaaf8abea36597af3b0651d2c162a86c0a0dd4420766f47e5724039639267
+    buildsystem: simple
+    build-commands:
+      - cp -ar * /app
+  - name: desktop-misc
+    sources:
+      - type: file
+        path: de.tum.in.isabelle.Isabelle.desktop
+    buildsystem: simple
+    build-commands:
+      - install -D --target-directory=${FLATPAK_DEST}/share/applications -m444 $FLATPAK_ID.desktop
