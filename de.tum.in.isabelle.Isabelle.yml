@@ -20,13 +20,15 @@ modules:
         url: 'https://isabelle.in.tum.de/dist/Isabelle2024_linux.tar.gz'
         archive-type: 'tar-gzip'
         sha256: 603aaaf8abea36597af3b0651d2c162a86c0a0dd4420766f47e5724039639267
-    buildsystem: simple
-    build-commands:
-      - cp -ar * /app
-  - name: desktop-misc
-    sources:
       - type: file
         path: de.tum.in.isabelle.Isabelle.desktop
+      - type: file
+        path: de.tum.in.isabelle.Isabelle.mime.xml
     buildsystem: simple
     build-commands:
-      - install -D --target-directory=${FLATPAK_DEST}/share/applications -m444 $FLATPAK_ID.desktop
+      - cp -ar * ${FLATPAK_DEST}
+    post-install:
+      - mkdir -p ${FLATPAK_DEST}/share/mime/packages/ ${FLATPAK_DEST}/share/applications
+      - install -m644 -p -t ${FLATPAK_DEST}/share/mime/packages $FLATPAK_ID.mime.xml
+      - update-mime-database ${FLATPAK_DEST}/share/mime
+      - desktop-file-install --rebuild-mime-info-cache --dir=${FLATPAK_DEST}/share/applications --mode=444 $FLATPAK_ID.desktop
