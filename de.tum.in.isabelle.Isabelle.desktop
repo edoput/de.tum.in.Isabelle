@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Isabelle 2024
+Name=Isabelle 2025-RC1
 Categories=Development;IDE
 Encoding=UTF-8
 Type=Application
-Exec=/app/Isabelle2024 %F
-TryExec=/app/Isabelle2024
+Exec=/app/Isabelle2025-RC1 %F
+TryExec=/app/Isabelle2025-RC1
 Terminal=false
 StartupNotify=true
 MimeType=text/thy
