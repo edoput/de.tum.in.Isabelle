@@ -1,6 +1,6 @@
 id: de.tum.in.isabelle.Isabelle
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: /app/Isabelle2026
 branch: '2026'
